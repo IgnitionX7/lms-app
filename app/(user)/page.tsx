@@ -1,5 +1,11 @@
+import Hero from "@/components/Hero";
 import Image from "next/image";
 
 export default function Home() {
-  return <div> Hello Shan</div>;
+  return (
+    <div className="min-h-screen bg-background">
+      <Hero />
+      Courses go here ...
+    </div>
+  );
 }
