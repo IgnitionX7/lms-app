@@ -14,6 +14,9 @@ importers:
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.1.6
         version: 2.1.6(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@radix-ui/react-progress':
+        specifier: ^1.1.2
+        version: 1.1.2(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-slot':
         specifier: ^1.1.2
         version: 1.1.2(@types/react@19.0.10)(react@19.0.0)
@@ -37,7 +40,7 @@ importers:
         version: 3.79.0
       lms-project:
         specifier: 'file:'
-        version: file:(@babel/core@7.26.9)(@babel/runtime@7.26.9)(@codemirror/lint@6.8.4)(@codemirror/theme-one-dark@6.1.2)(@emotion/is-prop-valid@1.2.2)(@sanity/client@6.28.3)(@sanity/icons@3.6.0(react@19.0.0))(@sanity/types@3.77.2(@types/react@19.0.10))(@sanity/ui@2.14.3(@emotion/is-prop-valid@1.2.2)(react-dom@19.0.0(react@19.0.0))(react-is@18.3.1)(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0)))(@types/babel__core@7.20.5)(@types/node@20.17.19)(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(codemirror@6.0.1)(jiti@1.21.7)(react-is@18.3.1)(tailwindcss@3.4.17)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
+        version: file:(@babel/core@7.26.9)(@babel/runtime@7.26.9)(@codemirror/lint@6.8.4)(@codemirror/theme-one-dark@6.1.2)(@emotion/is-prop-valid@1.2.2)(@sanity/icons@3.6.0(react@19.0.0))(@sanity/types@3.77.2(@types/react@19.0.10))(@sanity/ui@2.14.3(@emotion/is-prop-valid@1.2.2)(react-dom@19.0.0(react@19.0.0))(react-is@18.3.1)(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0)))(@types/babel__core@7.20.5)(@types/node@20.17.19)(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(codemirror@6.0.1)(jiti@1.21.7)(react-is@18.3.1)(tailwindcss@3.4.17)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0)
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.0.0)
@@ -1844,6 +1847,19 @@ packages:
 
   '@radix-ui/react-primitive@2.0.2':
     resolution: {integrity: sha512-Ec/0d38EIuvDF+GZjcMU/Ze6MxntVJYO/fRlCPhCaVUyPY9WTalHJw54tp9sXeJo3tlShWpy41vQRgLRGOuz+w==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
+  '@radix-ui/react-progress@1.1.2':
+    resolution: {integrity: sha512-u1IgJFQ4zNAUTjGdDL5dcl/U8ntOR6jsnhxKb5RKp5Ozwl88xKR9EqRZOe/Mk8tnx0x5tNUe2F+MzsyjqMg0MA==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -7982,6 +7998,16 @@ snapshots:
       '@types/react': 19.0.10
       '@types/react-dom': 19.0.4(@types/react@19.0.10)
 
+  '@radix-ui/react-progress@1.1.2(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@radix-ui/react-context': 1.1.1(@types/react@19.0.10)(react@19.0.0)
+      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+    optionalDependencies:
+      '@types/react': 19.0.10
+      '@types/react-dom': 19.0.4(@types/react@19.0.10)
+
   '@radix-ui/react-roving-focus@1.1.2(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@radix-ui/primitive': 1.1.1
@@ -10989,11 +11015,12 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  lms-project@file:(@babel/core@7.26.9)(@babel/runtime@7.26.9)(@codemirror/lint@6.8.4)(@codemirror/theme-one-dark@6.1.2)(@emotion/is-prop-valid@1.2.2)(@sanity/client@6.28.3)(@sanity/icons@3.6.0(react@19.0.0))(@sanity/types@3.77.2(@types/react@19.0.10))(@sanity/ui@2.14.3(@emotion/is-prop-valid@1.2.2)(react-dom@19.0.0(react@19.0.0))(react-is@18.3.1)(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0)))(@types/babel__core@7.20.5)(@types/node@20.17.19)(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(codemirror@6.0.1)(jiti@1.21.7)(react-is@18.3.1)(tailwindcss@3.4.17)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0):
+  lms-project@file:(@babel/core@7.26.9)(@babel/runtime@7.26.9)(@codemirror/lint@6.8.4)(@codemirror/theme-one-dark@6.1.2)(@emotion/is-prop-valid@1.2.2)(@sanity/icons@3.6.0(react@19.0.0))(@sanity/types@3.77.2(@types/react@19.0.10))(@sanity/ui@2.14.3(@emotion/is-prop-valid@1.2.2)(react-dom@19.0.0(react@19.0.0))(react-is@18.3.1)(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0)))(@types/babel__core@7.20.5)(@types/node@20.17.19)(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(codemirror@6.0.1)(jiti@1.21.7)(react-is@18.3.1)(tailwindcss@3.4.17)(terser@5.39.0)(typescript@5.7.3)(yaml@2.7.0):
     dependencies:
       '@clerk/nextjs': 6.12.0(next@15.1.7(@babel/core@7.26.9)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-dropdown-menu': 2.1.6(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@radix-ui/react-slot': 1.1.2(@types/react@19.0.10)(react@19.0.0)
+      '@sanity/client': 6.28.3(debug@4.4.0)
       '@sanity/image-url': 1.1.0
       '@sanity/vision': 3.77.2(@babel/runtime@7.26.9)(@codemirror/lint@6.8.4)(@codemirror/theme-one-dark@6.1.2)(@emotion/is-prop-valid@1.2.2)(codemirror@6.0.1)(react-dom@19.0.0(react@19.0.0))(react-is@18.3.1)(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
       class-variance-authority: 0.7.1
@@ -11018,7 +11045,6 @@ snapshots:
       - '@opentelemetry/api'
       - '@playwright/test'
       - '@remix-run/react'
-      - '@sanity/client'
       - '@sanity/icons'
       - '@sanity/types'
       - '@sanity/ui'

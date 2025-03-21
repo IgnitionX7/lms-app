@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Loader } from "./Loader";
 import { urlFor } from "@/sanity/lib/image";
+import { BookOpen } from "lucide-react";
+import { CourseProgress } from "./CourseProgress";
 
 type CourseCardProps = {
   course: GetCoursesQueryResult[number];
@@ -44,6 +46,48 @@ function CourseCard({ course, progress, href }: CourseCardProps) {
                       minimumFractionDigits: 2,
                     })}`}
               </span>
+            )}
+          </div>
+        </div>
+        <div className="p-6 flex flex-col flex-1">
+          <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
+            {course.title}
+          </h3>
+          <p className="text-muted-foreground mb-4 line-clamp-2 flex-1">
+            {course.description}
+          </p>
+          <div className="space-y-4 mt-auto">
+            {course.instructor && (
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  {course.instructor.photo ? (
+                    <div className="relative h-8 w-8 mr-2">
+                      <Image
+                        src={urlFor(course.instructor.photo).url() || ""}
+                        alt={course.instructor.name || "Instructor"}
+                        fill
+                        className="rounded-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="h-8 w-8 mr-2 rounded-full bg-muted flex items-center justify-center">
+                      <Loader size="sm" />
+                    </div>
+                  )}
+                  <span className="text-sm text-muted-foreground">
+                    by {course.instructor.name}
+                  </span>
+                </div>
+                <BookOpen className="h-4 w-4 text-muted-foreground" />
+              </div>
+            )}
+            {typeof progress === "number" && (
+              <CourseProgress
+                progress={progress}
+                variant="default"
+                size="sm"
+                label="Course Progress"
+              />
             )}
           </div>
         </div>
