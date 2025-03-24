@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <div className="relative h-[400px] w-full">
+    <div className="relative h-[40vh] w-full">
       {/* Background Image */}
       <Image
         src="/hero-banner.jpg"
@@ -14,10 +14,11 @@ function Hero() {
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black to-black/30" />
+      {/* <div className="absolute inset-0 bg-black/50"></div> */}
 
       {/* Text on Top */}
-      <div className="absolute inset-0 flex flex-col justify-center items-start px-8">
+      <div className="absolute inset-0 container mx-auto px-4 flex flex-col justify-center items-start">
         <h1 className="text-3xl text-white font-bold">
           Unlock Your Potential 🎉🎇
         </h1>

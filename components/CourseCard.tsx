@@ -62,10 +62,23 @@ function CourseCard({ course, progress, href }: CourseCardProps) {
                 <div className="flex items-center">
                   {course.instructor.photo ? (
                     <div className="relative h-8 w-8 mr-2">
-                      <Image
+                      {/* <Image
                         src={urlFor(course.instructor.photo).url() || ""}
                         alt={course.instructor.name || "Instructor"}
                         fill
+                        className="rounded-full object-cover"
+                      /> */}
+                      <Image
+                        src={
+                          urlFor(course.instructor.photo)
+                            .width(200)
+                            .height(200)
+                            .quality(100)
+                            .url() || ""
+                        }
+                        alt={course.instructor.name || "Course Instructor"}
+                        width={48} // Matches h-12 (12 * 4 = 48px)
+                        height={48}
                         className="rounded-full object-cover"
                       />
                     </div>
