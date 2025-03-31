@@ -65,6 +65,7 @@ function Sidebar({ course, completedLessons = [], progress }: SidebarProps) {
   if (!course) {
     return null;
   }
+  // console.log("Sidebar completedLessons:", completedLessons);
 
   const SidebarContent = () => {
     return (

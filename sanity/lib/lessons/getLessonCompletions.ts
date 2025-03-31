@@ -24,7 +24,7 @@ export async function getLessonCompletions(
     query: getCompletionsQuery,
     params: { studentId, courseId },
   });
-
+  // console.log("Raw Sanity response:", result);
   const { course, completedLessons } = result.data;
 
   // Calculate module progress

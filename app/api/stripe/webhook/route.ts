@@ -16,7 +16,7 @@ export async function POST(req: Request) {
     const body = await req.text();
     const headersList = await headers();
     const signature = headersList.get("stripe-signature");
-    console.log(signature);
+    // console.log(signature);
     // const signature = req.headers.get("stripe-signature");
 
     if (!signature) {
