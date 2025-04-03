@@ -2,6 +2,7 @@
 import CourseCard from "@/components/CourseCard";
 import { getLessonCompletions } from "@/sanity/lib/lessons/getLessonCompletions";
 import { getEnrolledCourses } from "@/sanity/lib/student/getEnrolledCourses";
+import { getStudentByClerkId } from "@/sanity/lib/student/getStudentByClerkId";
 import { currentUser } from "@clerk/nextjs/server";
 import { GraduationCap } from "lucide-react";
 import Link from "next/link";
@@ -13,6 +14,11 @@ async function MyCoursesPage() {
   if (!user?.id) {
     return redirect("/");
   }
+  // ✅ Get the student's Sanity ID
+  const student = await getStudentByClerkId(user.id);
+  if (!student) {
+    return redirect("/");
+  }
 
   const enrolledCourses = await getEnrolledCourses(user.id);
 
@@ -21,7 +27,9 @@ async function MyCoursesPage() {
     enrolledCourses.map(async ({ course }) => {
       if (!course) return null;
       // const progress = await getCourseProgress(user.id, course._id);
-      const progress = await getLessonCompletions(user.id, course._id);
+      // const progress = await getLessonCompletions(user.id, course._id);
+      // ✅ Use Sanity student ID in getLessonCompletions
+      const progress = await getLessonCompletions(student._id, course._id);
       return {
         course,
         progress: progress.courseProgress,

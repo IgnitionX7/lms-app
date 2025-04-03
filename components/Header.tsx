@@ -1,3 +1,5 @@
+"use client";
+
 import { BookMarkedIcon, BookOpen } from "lucide-react";
 import { DarkModeToggle } from "./DarkModeToggle";
 import { Button } from "./ui/button";

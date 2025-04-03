@@ -1,7 +1,9 @@
 import CourseCard from "@/components/CourseCard";
 import Hero from "@/components/Hero";
 import { getCourses } from "@/sanity/lib/courses/getCourses";
-import Image from "next/image";
+
+export const dynamic = "force-static"; // making our home page static
+export const revalidate = 3600; // revalidate at most every hour
 
 export default async function Home() {
   const courses = await getCourses();

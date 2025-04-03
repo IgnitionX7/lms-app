@@ -1,7 +1,7 @@
 "use client";
 
 import { createStripeCheckout } from "@/actions/createStripeCheckout";
-import { SignInButton, useUser } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 import { CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

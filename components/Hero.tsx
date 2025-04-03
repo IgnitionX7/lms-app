@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
+import heroBanner from "@/public/hero-banner.jpg";
 
 function Hero() {
   return (
     <div className="relative h-[40vh] w-full">
       {/* Background Image */}
       <Image
-        src="/hero-banner.jpg"
+        src={heroBanner}
         alt="Background"
         fill
         priority
@@ -19,18 +19,15 @@ function Hero() {
 
       {/* Text on Top */}
       <div className="absolute inset-0 container mx-auto px-4 flex flex-col justify-center items-start">
-        <h1 className="text-3xl text-white font-bold">
+        <h1 className="text-3xl text-white font-bold transition-all duration-300 ease-in-out hover:translate-y-[-4px]">
           Unlock Your Potential 🎉🎇
         </h1>
-        <p className="text-lg text-white/80 mt-2">
+        <p className="text-lg text-white/80 mt-2 transition-all duration-300 ease-in-out hover:translate-y-[-4px]">
           Your path to mastering skills.
         </p>
-        <Link
-          href="/courses"
-          className="mt-4 bg-primary text-white dark:text-black px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:translate-y-[-4px]"
-        >
-          Enroll Now
-        </Link>
+        <p className="mt-4 bg-primary text-white dark:text-black px-4 py-2 rounded-full transition-all duration-300 ease-in-out hover:translate-y-[-4px]">
+          Enroll Now!
+        </p>
       </div>
     </div>
   );
